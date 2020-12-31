@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons,
+  Vcl.StdCtrls;
 
 type
   Tform_principal = class(TForm)
@@ -15,16 +16,35 @@ type
     spb_fechar: TSpeedButton;
     pnl_menu: TPanel;
     spbCliente: TSpeedButton;
-    SpeedButton1: TSpeedButton;
+    spbProduto: TSpeedButton;
     spbVenda: TSpeedButton;
     spbCaixa: TSpeedButton;
     spbFinanceiro: TSpeedButton;
     pnl_barra_botao: TPanel;
-    procedure spb_fecharClick(Sender: TObject);
+    spb_minimizar: TSpeedButton;
+    spb_config: TSpeedButton;
+    spb_usuario: TSpeedButton;
+    pnl_rapido_vendas: TPanel;
+    lbl_acesso_rapido: TLabel;
+    spb_rapido_venda: TSpeedButton;
+    shp_rapido_vendas: TShape;
+    pnl_rapido_cliente: TPanel;
+    shp_rapido_cliente: TShape;
+    spb_rapido_cliente: TSpeedButton;
+    pnl_rapido_produto: TPanel;
+    shp_rapido_produto: TShape;
+    spb_rapido_produto: TSpeedButton;
+    pnl_rapido_caixa: TPanel;
+    shp_rapido_caixa: TShape;
+    spb_rapido_caixa: TSpeedButton;
+    Label1: TLabel;
+    pnl_pesquisar: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure spbVendaMouseEnter(Sender: TObject);
     procedure spbVendaMouseLeave(Sender: TObject);
+    procedure spb_minimizarClick(Sender: TObject);
+    procedure spb_fecharClick(Sender: TObject);
   private
     { Private declarations }
     procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
@@ -96,7 +116,12 @@ end;
 
 procedure Tform_principal.spb_fecharClick(Sender: TObject);
 begin
- Close;
+  Close;
+end;
+
+procedure Tform_principal.spb_minimizarClick(Sender: TObject);
+begin
+  Application.Minimize;
 end;
 
 end.
