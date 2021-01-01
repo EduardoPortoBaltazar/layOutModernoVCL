@@ -38,7 +38,10 @@ type
     shp_rapido_caixa: TShape;
     spb_rapido_caixa: TSpeedButton;
     Label1: TLabel;
-    pnl_pesquisar: TPanel;
+    pnl_rapido_procurar: TPanel;
+    spb_rapido_procurar: TSpeedButton;
+    shp_rapido_procurar: TShape;
+    edt_rapido_procurar: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure spbVendaMouseEnter(Sender: TObject);
