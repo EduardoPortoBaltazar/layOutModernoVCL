@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, dxGDIPlusClasses;
 
 type
   Tform_principal = class(TForm)
@@ -42,12 +42,22 @@ type
     spb_rapido_procurar: TSpeedButton;
     shp_rapido_procurar: TShape;
     edt_rapido_procurar: TEdit;
+    Image1: TImage;
+    Label2: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure spbVendaMouseEnter(Sender: TObject);
     procedure spbVendaMouseLeave(Sender: TObject);
     procedure spb_minimizarClick(Sender: TObject);
     procedure spb_fecharClick(Sender: TObject);
+    procedure spb_rapido_vendaMouseEnter(Sender: TObject);
+    procedure spb_rapido_vendaMouseLeave(Sender: TObject);
+    procedure spb_rapido_clienteMouseEnter(Sender: TObject);
+    procedure spb_rapido_produtoMouseEnter(Sender: TObject);
+    procedure spb_rapido_caixaMouseEnter(Sender: TObject);
+    procedure spb_rapido_clienteMouseLeave(Sender: TObject);
+    procedure spb_rapido_produtoMouseLeave(Sender: TObject);
+    procedure spb_rapido_caixaMouseLeave(Sender: TObject);
   private
     { Private declarations }
     procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
@@ -71,7 +81,7 @@ end;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
-  pnl_central.Top  := Round(form_principal.Height/2 - pnl_central.Height/2);
+  pnl_central.Top  := Round(form_principal.Height/2 - pnl_central.Height/2)- 70;
   pnl_central.Left := Round(form_principal.Width/2 - pnl_central.Width/2);
 end;
 
@@ -81,7 +91,11 @@ begin
   if focar then
   begin
     if local = 'MENU' then
-      Botao.Font.Color := clNavy;
+      Botao.Font.Color := clNavy
+    else
+    if local = 'RAPIDO' then
+      Botao.Font.Color := $007A3D00;
+
 
     Botao.Font.Color := clNavy;
     //Botao.Font.Style := [fsBold];
@@ -125,6 +139,60 @@ end;
 procedure Tform_principal.spb_minimizarClick(Sender: TObject);
 begin
   Application.Minimize;
+end;
+
+procedure Tform_principal.spb_rapido_caixaMouseEnter(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), true, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_caixaMouseLeave(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), False, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_clienteMouseEnter(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), true, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_clienteMouseLeave(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), False, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_produtoMouseEnter(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), true, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_produtoMouseLeave(Sender: TObject);
+begin
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), False, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_vendaMouseEnter(Sender: TObject);
+begin
+  //mostrar a barra abaixo do botao mouse estiver
+  //focando
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), true, 'RAPIDO' );
+
+end;
+
+procedure Tform_principal.spb_rapido_vendaMouseLeave(Sender: TObject);
+begin
+  //mostrar a barra abaixo do botao mouse estiver
+  //focando
+  prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
+          as TSpeedButton), False, 'RAPIDO' );
+
 end;
 
 end.

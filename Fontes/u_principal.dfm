@@ -2164,6 +2164,8 @@ object form_principal: Tform_principal
             0000000000000000000000000000000000000000000000000000}
           Layout = blGlyphTop
           ParentFont = False
+          OnMouseEnter = spb_rapido_vendaMouseEnter
+          OnMouseLeave = spb_rapido_vendaMouseLeave
           ExplicitTop = 100
         end
       end
@@ -2847,6 +2849,8 @@ object form_principal: Tform_principal
             FFFFFFFFFFFFFFFF0000}
           Layout = blGlyphTop
           ParentFont = False
+          OnMouseEnter = spb_rapido_clienteMouseEnter
+          OnMouseLeave = spb_rapido_clienteMouseLeave
           ExplicitTop = 100
         end
       end
@@ -3182,6 +3186,8 @@ object form_principal: Tform_principal
             0AFF772B0AFF772B0AFF772B0AFF772B0AFF762A09FFC3A293FF}
           Layout = blGlyphTop
           ParentFont = False
+          OnMouseEnter = spb_rapido_produtoMouseEnter
+          OnMouseLeave = spb_rapido_produtoMouseLeave
           ExplicitTop = 100
         end
       end
@@ -5277,26 +5283,28 @@ object form_principal: Tform_principal
             0000000000000000000000000000000000000000000000000000}
           Layout = blGlyphTop
           ParentFont = False
+          OnMouseEnter = spb_rapido_caixaMouseEnter
+          OnMouseLeave = spb_rapido_caixaMouseLeave
           ExplicitTop = 100
         end
       end
       object pnl_rapido_procurar: TPanel
         Left = 16
-        Top = 60
-        Width = 577
+        Top = 45
+        Width = 857
         Height = 45
+        BevelOuter = bvNone
         Caption = 'pnl_rapido_procurar'
         TabOrder = 4
         object shp_rapido_procurar: TShape
-          Left = 1
-          Top = 1
-          Width = 575
-          Height = 43
+          Left = 0
+          Top = 0
+          Width = 857
+          Height = 45
           Align = alClient
-          ExplicitLeft = 55
-          ExplicitTop = 7
-          ExplicitWidth = 41
-          ExplicitHeight = 26
+          Pen.Color = clSilver
+          ExplicitTop = -1
+          ExplicitWidth = 577
         end
         object spb_rapido_procurar: TSpeedButton
           Left = 5
@@ -5333,32 +5341,34 @@ object form_principal: Tform_principal
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6BFB5A26E578542257D35168B
             4B2FB08471ECE1DCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         end
-      end
-      object edt_rapido_procurar: TEdit
-        Left = 77
-        Top = 71
-        Width = 500
-        Height = 23
-        ParentCustomHint = False
-        BevelOuter = bvNone
-        BiDiMode = bdLeftToRight
-        CharCase = ecUpperCase
-        Color = clWhite
-        Ctl3D = True
-        DoubleBuffered = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = -1
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentBiDiMode = False
-        ParentCtl3D = False
-        ParentDoubleBuffered = False
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = False
-        TabOrder = 5
-        Text = 'BUSCA R'#193'PIDA'
+        object edt_rapido_procurar: TEdit
+          Left = 57
+          Top = 15
+          Width = 784
+          Height = 21
+          ParentCustomHint = False
+          TabStop = False
+          BevelOuter = bvNone
+          BiDiMode = bdLeftToRight
+          BorderStyle = bsNone
+          CharCase = ecUpperCase
+          Color = clWhite
+          Ctl3D = True
+          DoubleBuffered = False
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBiDiMode = False
+          ParentCtl3D = False
+          ParentDoubleBuffered = False
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = False
+          TabOrder = 0
+          Text = 'BUSCA R'#193'PIDA'
+        end
       end
     end
     object pnl_topo: TPanel
@@ -5619,6 +5629,50 @@ object form_principal: Tform_principal
           00AF000000260000000000000000000000000000000000000000}
         ParentFont = False
         ExplicitLeft = 776
+      end
+      object Image1: TImage
+        AlignWithMargins = True
+        Left = 8
+        Top = 1
+        Width = 56
+        Height = 33
+        Center = True
+        ParentShowHint = False
+        Picture.Data = {
+          0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000010
+          000000100804000000B5FA37EA0000000467414D410000B18F0BFC6105000000
+          206348524D00007A26000080840000FA00000080E8000075300000EA6000003A
+          98000017709CBA513C00000002624B47440000AA8D2332000000097048597300
+          000EC400000EC401952B0E1B0000000774494D4507E40C1F0D1631C9157F4200
+          0000DC4944415428CF75D0BB4A03511446E12F1A2B0316115389D14252E820E2
+          2B28B61AC53258F80416BE4AD4CADE4B67A1453A4114042F2062953282483001
+          43642C2233CACCFCCD596CD6615F8833E9445BDB99D9B83814D1B43B3D6BD6F5
+          5D9992C881F3882FD493C2935AC4DB1E932DBE8D443CAC9F141A3623DED248B6
+          18F7A6AEAC6C5F4B514A16DC0885AE05325352FA5FC8FDBE4535CB0263F870EF
+          D291F758A83AF4EAD88316260436CCD8713AF8BDAAFBE706F12DBA56068BBED8
+          4D9D67CFB31C4B3E8DA60A051D8B79739A2A193B35CDE77DA9B8CD1042BD1F33
+          FB322DE8FFF8320000002574455874646174653A63726561746500323032302D
+          31322D33315431333A32323A34392B30303A30308D333E3D0000002574455874
+          646174653A6D6F6469667900323032302D31322D33315431333A32323A34392B
+          30303A3030FC6E86810000001974455874536F667477617265007777772E696E
+          6B73636170652E6F72679BEE3C1A0000000049454E44AE426082}
+        ShowHint = False
+      end
+      object Label2: TLabel
+        Left = 86
+        Top = 7
+        Width = 129
+        Height = 25
+        Caption = 'Sistema Padr'#227'o'
+        Color = 10485760
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clNavy
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
       end
       object pln_barra_topo: TPanel
         Left = 0
