@@ -5709,6 +5709,7 @@ object form_principal: Tform_principal
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          OnClick = spbClienteClick
           OnMouseEnter = spbVendaMouseEnter
           OnMouseLeave = spbVendaMouseLeave
         end

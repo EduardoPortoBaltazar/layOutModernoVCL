@@ -58,9 +58,10 @@ type
     procedure spb_rapido_clienteMouseLeave(Sender: TObject);
     procedure spb_rapido_produtoMouseLeave(Sender: TObject);
     procedure spb_rapido_caixaMouseLeave(Sender: TObject);
+    procedure spbClienteClick(Sender: TObject);
   private
     { Private declarations }
-    procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
+//    procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
 
   public
     { Public declarations }
@@ -70,6 +71,9 @@ var
   form_principal: Tform_principal;
 
 implementation
+
+uses
+  u_central, u_funcoes;
 
 {$R *.dfm}
 
@@ -85,34 +89,12 @@ begin
   pnl_central.Left := Round(form_principal.Width/2 - pnl_central.Width/2);
 end;
 
-procedure Tform_principal.prc_focar_botao(BarraPainel: TPanel;
-  Botao: TSpeedButton; focar: Boolean; local: string);
+
+procedure Tform_principal.spbClienteClick(Sender: TObject);
 begin
-  if focar then
-  begin
-    if local = 'MENU' then
-      Botao.Font.Color := clNavy
-    else
-    if local = 'RAPIDO' then
-      Botao.Font.Color := $007A3D00;
+  form_central := Tform_central.Create(nil);
+  form_central.Show;
 
-
-    Botao.Font.Color := clNavy;
-    //Botao.Font.Style := [fsBold];
-    BarraPainel.Parent := Botao.Parent;
-    BarraPainel.BringToFront;
-
-    BarraPainel.Left    := Botao.Left;
-    BarraPainel.top     := Botao.Top + (Botao.Height - 1);
-    BarraPainel.Width   := Botao.Width;
-    BarraPainel.Visible := True;
-  end
-  else
-  begin
-    Botao.Font.Color := clGray;
-    Botao.Font.Style := [];
-    BarraPainel.Visible := False;
-  end;
 end;
 
 procedure Tform_principal.spbVendaMouseEnter(Sender: TObject);
