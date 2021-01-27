@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   u_principal in 'Fontes\u_principal.pas' {form_principal},
   u_central in 'Fontes\u_central.pas' {form_central},
-  u_funcoes in 'Fontes\u_funcoes.pas';
+  u_funcoes in 'Fontes\u_funcoes.pas',
+  u_pessoas in 'Fontes\u_pessoas.pas' {form_pessoas};
 
 {$R *.res}
 

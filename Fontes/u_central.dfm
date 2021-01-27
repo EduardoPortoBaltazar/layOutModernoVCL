@@ -15,6 +15,7 @@ object form_central: Tform_central
   OldCreateOrder = False
   OnClose = FormClose
   OnResize = FormResize
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnl_topo: TPanel
@@ -22,7 +23,7 @@ object form_central: Tform_central
     Left = 10
     Top = 3
     Width = 1010
-    Height = 44
+    Height = 48
     Margins.Left = 10
     Margins.Right = 10
     Margins.Bottom = 10
@@ -63,7 +64,7 @@ object form_central: Tform_central
       Left = 972
       Top = 0
       Width = 38
-      Height = 44
+      Height = 48
       Cursor = crHandPoint
       Align = alRight
       Flat = True
@@ -152,9 +153,9 @@ object form_central: Tform_central
   object pnl_principal: TPanel
     AlignWithMargins = True
     Left = 10
-    Top = 60
+    Top = 64
     Width = 1010
-    Height = 503
+    Height = 494
     Margins.Left = 10
     Margins.Right = 10
     Margins.Bottom = 10
@@ -163,14 +164,15 @@ object form_central: Tform_central
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 15
+    ExplicitTop = 60
+    ExplicitHeight = 503
   end
   object pnl_rodape: TPanel
     AlignWithMargins = True
     Left = 10
-    Top = 576
+    Top = 571
     Width = 1010
-    Height = 41
+    Height = 46
     Margins.Left = 10
     Margins.Right = 10
     Margins.Bottom = 10
@@ -179,9 +181,7 @@ object form_central: Tform_central
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 304
-    ExplicitTop = 216
-    ExplicitWidth = 185
+    ExplicitTop = 572
     object Image2: TImage
       AlignWithMargins = True
       Left = 16

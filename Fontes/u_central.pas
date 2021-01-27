@@ -23,6 +23,7 @@ type
     procedure spb_minimizarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +36,7 @@ var
 implementation
 
 uses
-  u_funcoes;
+  u_funcoes, u_pessoas;
 
 {$R *.dfm}
 
@@ -50,6 +51,18 @@ begin
    prcArredondaPainel(pnl_topo, 12);
    prcArredondaPainel(pnl_principal, 12);
    prcArredondaPainel(pnl_rodape, 12);
+end;
+
+procedure Tform_central.FormShow(Sender: TObject);
+begin
+  if var_gbl_modulo = 'PESSOAS' then
+  begin
+    form_pessoas := Tform_pessoas.Create(form_central);
+    form_pessoas.Parent := pnl_principal;
+    form_pessoas.Show;
+
+    lbl_nome_central.Caption := 'Pessoas';
+  end;
 end;
 
 procedure Tform_central.spb_minimizarClick(Sender: TObject);

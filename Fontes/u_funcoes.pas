@@ -9,6 +9,10 @@ uses
   procedure prcArredondaPainel(APanel: TPanel; ATamanho: Integer);
   procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
 
+var
+  var_gbl_modulo: string;
+
+
 implementation
 
 uses

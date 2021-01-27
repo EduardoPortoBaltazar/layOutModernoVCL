@@ -92,9 +92,10 @@ end;
 
 procedure Tform_principal.spbClienteClick(Sender: TObject);
 begin
+  var_gbl_modulo := 'PESSOAS';
+
   form_central := Tform_central.Create(nil);
   form_central.Show;
-
 end;
 
 procedure Tform_principal.spbVendaMouseEnter(Sender: TObject);
