@@ -53,9 +53,7 @@ object form_pessoas: Tform_pessoas
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 219
+        ExplicitWidth = 106
       end
       object lbl_consultar_text: TLabel
         AlignWithMargins = True
@@ -762,6 +760,7 @@ object form_pessoas: Tform_pessoas
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          OnClick = spb_consultarClick
           ExplicitLeft = 10
         end
       end
@@ -780,9 +779,6 @@ object form_pessoas: Tform_pessoas
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 322
-      ExplicitTop = 24
-      ExplicitHeight = 257
       object lbl_inserir_titulo: TLabel
         AlignWithMargins = True
         Left = 3
@@ -819,8 +815,6 @@ object form_pessoas: Tform_pessoas
         Font.Style = []
         ParentFont = False
         WordWrap = True
-        ExplicitLeft = 0
-        ExplicitTop = 137
         ExplicitWidth = 138
       end
       object img_inseriri_pessoa: TImage

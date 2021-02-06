@@ -26,6 +26,7 @@ type
     spb_inserir: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
+    procedure spb_consultarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +39,7 @@ var
 implementation
 
 uses
-  u_funcoes;
+  u_funcoes, u_consulta;
 
 {$R *.dfm}
 
@@ -54,8 +55,15 @@ begin
   prcArredondaPainel(pnl_inserir, 12);
   prcArredondaPainel(pnl_pessoas_principal, 12);
 
-  pnl_pessoas_principal.Top  := Round(form_pessoas.Height/2 - pnl_pessoas_principal.Height/2)- 70;
+  pnl_pessoas_principal.Top  := Round(form_pessoas.Height/2 - pnl_pessoas_principal.Height/2);
   pnl_pessoas_principal.Left := Round(form_pessoas.Width/2 - pnl_pessoas_principal.Width/2);
+end;
+
+procedure Tform_pessoas.spb_consultarClick(Sender: TObject);
+begin
+  form_consulta := Tform_consulta.Create( form_pessoas);
+  form_consulta.Parent := form_pessoas.Parent;
+  form_consulta.Show;
 end;
 
 end.
