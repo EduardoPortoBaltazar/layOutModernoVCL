@@ -27,6 +27,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure spb_consultarClick(Sender: TObject);
+    procedure spb_inserirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,7 +40,7 @@ var
 implementation
 
 uses
-  u_funcoes, u_consulta;
+  u_funcoes, u_consulta, u_pessoas_campos;
 
 {$R *.dfm}
 
@@ -64,6 +65,13 @@ begin
   form_consulta := Tform_consulta.Create( form_pessoas);
   form_consulta.Parent := form_pessoas.Parent;
   form_consulta.Show;
+end;
+
+procedure Tform_pessoas.spb_inserirClick(Sender: TObject);
+begin
+  form_pessoas_campos        := Tform_pessoas_campos.Create( form_pessoas);
+  form_pessoas_campos.Parent := form_pessoas.Parent;
+  form_pessoas_campos.Show;
 end;
 
 end.

@@ -1043,6 +1043,7 @@ object form_pessoas: Tform_pessoas
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          OnClick = spb_inserirClick
           ExplicitLeft = 80
           ExplicitTop = 16
           ExplicitWidth = 23

@@ -1,13 +1,16 @@
 unit u_funcoes;
 
+//Font Primaria $00A00000 //Azul
+
 interface
 
 uses
   Winapi.Windows,
-  Vcl.ExtCtrls, Vcl.Buttons;
+  Vcl.ExtCtrls, Vcl.Buttons, Vcl.ComCtrls;
 
   procedure prcArredondaPainel(APanel: TPanel; ATamanho: Integer);
   procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
+  procedure prc_ocultar_tabs (PageControl: TpageControl);
 
 var
   var_gbl_modulo: string;
@@ -41,7 +44,13 @@ begin
       Botao.Font.Color := clNavy
     else
     if local = 'RAPIDO' then
-      Botao.Font.Color := $007A3D00;
+      Botao.Font.Color := $007A3D00
+    else
+    if local = 'PAGECONTROL' then
+    begin
+       Botao.Font.Style := [fsBold];
+       Botao.Font.Color := $00A00000;
+    end;
 
 
     Botao.Font.Color := clNavy;
@@ -56,10 +65,27 @@ begin
   end
   else
   begin
-    Botao.Font.Color := clGray;
-    Botao.Font.Style := [];
+    if local = 'MENU' then
+      Botao.Font.Color := clGray
+    else
+    if local = 'RAPIDO' then
+      Botao.Font.Color := $00424244
+    else
+    if local = 'PAGECONTROL' then
+      Botao.Font.Color := $00A00000;
+
     BarraPainel.Visible := False;
   end;
+end;
+
+procedure prc_ocultar_tabs (PageControl: TpageControl);
+var
+  page: Integer;
+begin
+  for page :=0 to PageControl.PageCount -1 do
+    PageControl.Pages[page].TabVisible := False;
+
+  PageControl.ActivePageIndex := 0;
 end;
 
 end.
