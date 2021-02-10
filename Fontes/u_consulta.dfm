@@ -3,8 +3,8 @@ object form_consulta: Tform_consulta
   Top = 0
   Align = alClient
   BorderStyle = bsNone
-  ClientHeight = 338
-  ClientWidth = 651
+  ClientHeight = 472
+  ClientWidth = 835
   Color = 14145495
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,21 +13,24 @@ object form_consulta: Tform_consulta
   Font.Style = []
   OldCreateOrder = False
   OnResize = FormResize
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnl_fundo: TPanel
     Left = 0
     Top = 0
-    Width = 651
-    Height = 338
+    Width = 835
+    Height = 472
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 651
+    ExplicitHeight = 338
     object pnl_topo: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 10
-      Width = 645
+      Width = 829
       Height = 159
       Margins.Top = 10
       Align = alTop
@@ -35,6 +38,7 @@ object form_consulta: Tform_consulta
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 645
       object pnl_pesquisa: TPanel
         AlignWithMargins = True
         Left = 88
@@ -118,6 +122,7 @@ object form_consulta: Tform_consulta
               A5735D7B3111A26E57C7A79AD0B6ABBE9A8A8F50357D3516CAAC9FFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6BFB5A26E578542257D35168B
               4B2FB08471ECE1DCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+            OnClick = spb_pesquisaClick
           end
           object edt_pesquisa: TEdit
             Left = 45
@@ -154,30 +159,73 @@ object form_consulta: Tform_consulta
       AlignWithMargins = True
       Left = 3
       Top = 175
-      Width = 645
-      Height = 160
+      Width = 829
+      Height = 294
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 10
-      ExplicitTop = 125
-      ExplicitWidth = 641
-      ExplicitHeight = 208
+      ExplicitWidth = 645
+      ExplicitHeight = 160
       object dbgRegistros: TDBGrid
+        AlignWithMargins = True
         Left = 0
-        Top = 0
-        Width = 645
-        Height = 160
+        Top = 10
+        Width = 829
+        Height = 284
+        Margins.Left = 0
+        Margins.Top = 10
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alClient
+        BorderStyle = bsNone
+        DataSource = ds_padrao
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
+        TitleFont.Height = -13
+        TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDrawColumnCell = dbgRegistrosDrawColumnCell
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'CODCONTA'
+            Title.Caption = 'C'#243'digo'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DESCCONTA'
+            Title.Caption = 'Descri'#231#227'o'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TIPOCONTA'
+            Title.Caption = 'Tipo'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ATIVO'
+            Title.Caption = 'Ativo'
+            Visible = True
+          end>
       end
     end
+  end
+  object ds_padrao: TDataSource
+    DataSet = form_dados.qry_Contas
+    Left = 48
+    Top = 400
   end
 end

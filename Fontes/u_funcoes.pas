@@ -6,9 +6,10 @@ interface
 
 uses
   Winapi.Windows,
-  Vcl.ExtCtrls, Vcl.Buttons, Vcl.ComCtrls;
+  Vcl.ExtCtrls, Vcl.Buttons, Vcl.ComCtrls, Vcl.DBGrids;
 
   procedure prcArredondaPainel(APanel: TPanel; ATamanho: Integer);
+  procedure prcAjustaTamanhoLinha(dbg: TDBGrid);
   procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
   procedure prc_ocultar_tabs (PageControl: TpageControl);
 
@@ -76,6 +77,12 @@ begin
 
     BarraPainel.Visible := False;
   end;
+end;
+
+procedure prcAjustaTamanhoLinha(dbg: TDBGrid);
+begin
+
+
 end;
 
 procedure prc_ocultar_tabs (PageControl: TpageControl);
