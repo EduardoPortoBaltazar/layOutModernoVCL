@@ -38,9 +38,6 @@ object form_pessoas_campos: Tform_pessoas_campos
       TabOrder = 0
       object tbs_dados_Gerais: TTabSheet
         Caption = 'tbs_dados_Gerais'
-        ExplicitLeft = 3
-        ExplicitTop = 27
-        ExplicitHeight = 374
         object Label1: TLabel
           Left = 3
           Top = 25
@@ -106,8 +103,6 @@ object form_pessoas_campos: Tform_pessoas_campos
       object tbs_endereco: TTabSheet
         Caption = 'tbs_endereco'
         ImageIndex = 1
-        ExplicitTop = 25
-        ExplicitHeight = 374
         object Label5: TLabel
           Left = 3
           Top = 25
@@ -145,6 +140,8 @@ object form_pessoas_campos: Tform_pessoas_campos
         Cursor = crHandPoint
         Margins.Left = 15
         Align = alLeft
+        GroupIndex = 1
+        Down = True
         Caption = 'Dados Gerais '
         Flat = True
         Font.Charset = GB2312_CHARSET
@@ -169,6 +166,7 @@ object form_pessoas_campos: Tform_pessoas_campos
         Cursor = crHandPoint
         Margins.Left = 15
         Align = alLeft
+        GroupIndex = 1
         Caption = 'Endere'#231'o'
         Flat = True
         Font.Charset = GB2312_CHARSET

@@ -20,12 +20,18 @@ type
     pnl_edt: TPanel;
     shp_pesquisa: TShape;
     ds_padrao: TDataSource;
+    pnl_rodape: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure FormResize(Sender: TObject);
     procedure dbgRegistrosDrawColumnCell(Sender: TObject;
       const Rect: TRect; DataCol: Integer; Column: TColumn;
       State: TGridDrawState);
     procedure FormShow(Sender: TObject);
     procedure spb_pesquisaClick(Sender: TObject);
+    procedure dbgRegistrosDblClick(Sender: TObject);
+    procedure dbgRegistrosKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -38,9 +44,16 @@ var
 implementation
 
 uses
-  u_funcoes, u_dados;
+  u_funcoes, u_dados, u_msg_confirm;
 
 {$R *.dfm}
+
+procedure Tform_consulta.dbgRegistrosDblClick(Sender: TObject);
+begin
+ //Abre pessoas campos
+
+
+end;
 
 procedure Tform_consulta.dbgRegistrosDrawColumnCell(Sender: TObject;
   const Rect: TRect; DataCol: Integer; Column: TColumn;
@@ -61,8 +74,25 @@ begin
 
   dbgRegistros.Canvas.FillRect(Rect);
   dbgRegistros.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+
   //Centralizar texto
-  //dbgRegistros.Canvas.TextRect( Rect, Rect.Left + 8, Column.Field.DisplayText);
+  dbgRegistros.Canvas.TextRect( Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
+end;
+
+procedure Tform_consulta.dbgRegistrosKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+ if Key = VK_DELETE then
+ begin
+  form_msn_confirm := Tform_msn_confirm.Create(form_consulta);
+  form_msn_confirm.lbl_titulo_pergunta.Caption := 'Exclusão de Registro';
+  form_msn_confirm.lbl_mensagem.Caption        := 'Tem certeza que deseja excluir esse registro?';
+  form_msn_confirm.ShowModal;
+
+  if form_msn_confirm.bResposta then
+    form_dados.qry_Contas.Delete;
+ end;
+
 end;
 
 procedure Tform_consulta.FormResize(Sender: TObject);
@@ -82,7 +112,8 @@ end;
 procedure Tform_consulta.spb_pesquisaClick(Sender: TObject);
 begin
   form_dados.qry_Contas.Open;
-  //prcAjustaTamanhoLinha();
+  u_funcoes.prcAjustarColunasGrid(dbgRegistros);
+  u_funcoes.prcAjustaTamanhoLinha(dbgRegistros);
 end;
 
 end.

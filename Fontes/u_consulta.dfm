@@ -3,7 +3,7 @@ object form_consulta: Tform_consulta
   Top = 0
   Align = alClient
   BorderStyle = bsNone
-  ClientHeight = 472
+  ClientHeight = 519
   ClientWidth = 835
   Color = 14145495
   Font.Charset = DEFAULT_CHARSET
@@ -20,12 +20,11 @@ object form_consulta: Tform_consulta
     Left = 0
     Top = 0
     Width = 835
-    Height = 472
+    Height = 519
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 651
-    ExplicitHeight = 338
+    ExplicitHeight = 472
     object pnl_topo: TPanel
       AlignWithMargins = True
       Left = 3
@@ -38,7 +37,6 @@ object form_consulta: Tform_consulta
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 645
       object pnl_pesquisa: TPanel
         AlignWithMargins = True
         Left = 88
@@ -160,20 +158,19 @@ object form_consulta: Tform_consulta
       Left = 3
       Top = 175
       Width = 829
-      Height = 294
+      Height = 307
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 645
-      ExplicitHeight = 160
+      ExplicitHeight = 294
       object dbgRegistros: TDBGrid
         AlignWithMargins = True
         Left = 0
         Top = 10
         Width = 829
-        Height = 284
+        Height = 297
         Margins.Left = 0
         Margins.Top = 10
         Margins.Right = 0
@@ -195,6 +192,8 @@ object form_consulta: Tform_consulta
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
         OnDrawColumnCell = dbgRegistrosDrawColumnCell
+        OnDblClick = dbgRegistrosDblClick
+        OnKeyDown = dbgRegistrosKeyDown
         Columns = <
           item
             Expanded = False
@@ -206,20 +205,73 @@ object form_consulta: Tform_consulta
             Expanded = False
             FieldName = 'DESCCONTA'
             Title.Caption = 'Descri'#231#227'o'
+            Width = 64
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'TIPOCONTA'
             Title.Caption = 'Tipo'
+            Width = 64
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'ATIVO'
             Title.Caption = 'Ativo'
+            Width = 64
             Visible = True
           end>
+      end
+    end
+    object pnl_rodape: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 488
+      Width = 829
+      Height = 28
+      Align = alBottom
+      BevelOuter = bvNone
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 2
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 321
+        Height = 22
+        Align = alLeft
+        Caption = 'Para excluir, precione a tecla Del ou Delete  do teclado'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGrayText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitHeight = 17
+      end
+      object Label2: TLabel
+        AlignWithMargins = True
+        Left = 541
+        Top = 3
+        Width = 285
+        Height = 22
+        Align = alRight
+        Caption = 'Para Alterar clique duas vezes na linha desejada '
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGrayText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+        ExplicitLeft = 554
+        ExplicitTop = 0
+        ExplicitHeight = 17
       end
     end
   end
