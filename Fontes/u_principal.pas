@@ -60,6 +60,7 @@ type
     procedure spb_rapido_caixaMouseLeave(Sender: TObject);
     procedure spbClienteClick(Sender: TObject);
     procedure spb_rapido_caixaClick(Sender: TObject);
+    procedure spb_rapido_produtoClick(Sender: TObject);
   private
     { Private declarations }
 //    procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
@@ -74,7 +75,7 @@ var
 implementation
 
 uses
-  u_central, u_funcoes, u_login;
+  u_central, u_funcoes, u_login, u_mensagem_padrao;
 
 {$R *.dfm}
 
@@ -153,6 +154,12 @@ procedure Tform_principal.spb_rapido_clienteMouseLeave(Sender: TObject);
 begin
   prc_focar_botao(pnl_barra_botao, (TComponent(Sender)
           as TSpeedButton), False, 'RAPIDO' );
+end;
+
+procedure Tform_principal.spb_rapido_produtoClick(Sender: TObject);
+begin
+  frm_mensagens_padrao   := Tfrm_mensagens_padrao.Create(nil);
+  frm_mensagens_padrao.Show;
 end;
 
 procedure Tform_principal.spb_rapido_produtoMouseEnter(Sender: TObject);

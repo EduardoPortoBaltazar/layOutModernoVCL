@@ -3186,6 +3186,7 @@ object form_principal: Tform_principal
             0AFF772B0AFF772B0AFF772B0AFF772B0AFF762A09FFC3A293FF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_produtoClick
           OnMouseEnter = spb_rapido_produtoMouseEnter
           OnMouseLeave = spb_rapido_produtoMouseLeave
           ExplicitTop = 100

@@ -11,7 +11,8 @@ uses
   u_dados in 'Fontes\u_dados.pas' {form_dados: TDataModule},
   u_msg_confirm in 'Fontes\u_msg_confirm.pas' {form_msn_confirm},
   u_esmaecer in 'Fontes\u_esmaecer.pas' {form_esmaiecer_fundo},
-  u_login in 'Fontes\u_login.pas' {form_login};
+  u_login in 'Fontes\u_login.pas' {form_login},
+  u_mensagem_padrao in 'Fontes\u_mensagem_padrao.pas' {frm_mensagens_padrao};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(Tform_dados, form_dados);
   Application.CreateForm(Tform_esmaiecer_fundo, form_esmaiecer_fundo);
   Application.CreateForm(Tform_login, form_login);
+  Application.CreateForm(Tfrm_mensagens_padrao, frm_mensagens_padrao);
   Application.Run;
 end.
