@@ -5283,6 +5283,7 @@ object form_principal: Tform_principal
             0000000000000000000000000000000000000000000000000000}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_caixaClick
           OnMouseEnter = spb_rapido_caixaMouseEnter
           OnMouseLeave = spb_rapido_caixaMouseLeave
           ExplicitTop = 100

@@ -10,7 +10,8 @@ uses
   u_pessoas_campos in 'Fontes\u_pessoas_campos.pas' {form_pessoas_campos},
   u_dados in 'Fontes\u_dados.pas' {form_dados: TDataModule},
   u_msg_confirm in 'Fontes\u_msg_confirm.pas' {form_msn_confirm},
-  u_esmaecer in 'Fontes\u_esmaecer.pas' {form_esmaiecer_fundo};
+  u_esmaecer in 'Fontes\u_esmaecer.pas' {form_esmaiecer_fundo},
+  u_login in 'Fontes\u_login.pas' {form_login};
 
 {$R *.res}
 
@@ -20,5 +21,6 @@ begin
   Application.CreateForm(Tform_principal, form_principal);
   Application.CreateForm(Tform_dados, form_dados);
   Application.CreateForm(Tform_esmaiecer_fundo, form_esmaiecer_fundo);
+  Application.CreateForm(Tform_login, form_login);
   Application.Run;
 end.

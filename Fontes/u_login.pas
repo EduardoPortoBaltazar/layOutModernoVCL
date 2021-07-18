@@ -30,7 +30,7 @@ type
     Panel5: TPanel;
     SpeedButton1: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,10 +44,10 @@ implementation
 
 {$R *.dfm}
 
-procedure Tform_login.FormActivate(Sender: TObject);
+procedure Tform_login.FormResize(Sender: TObject);
 begin
-  pnl_fundo.Left := Round((form_login.Width - pnl_fundo.Width)/2);
-  pnl_fundo.Top  := Round((form_login.Height - pnl_fundo.Width)/2);
+  pnl_fundo.Left := Round((form_login.Width - pnl_fundo.Width) / 2);
+  pnl_fundo.Top  := Round((form_login.Height - pnl_fundo.Height) / 2);
 end;
 
 procedure Tform_login.SpeedButton1Click(Sender: TObject);

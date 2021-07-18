@@ -12,7 +12,7 @@ object form_login: Tform_login
   Font.Name = 'Segoe UI'
   Font.Style = []
   OldCreateOrder = False
-  OnActivate = FormActivate
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 17
   object pnl_fundo: TPanel
@@ -361,7 +361,7 @@ object form_login: Tform_login
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 110
+        Width = 250
         Height = 21
         Align = alTop
         Caption = 'Nome Usu'#225'rio'
@@ -371,6 +371,7 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        ExplicitWidth = 110
       end
       object Edit1: TEdit
         Left = 0
@@ -390,10 +391,6 @@ object form_login: Tform_login
         ParentFont = False
         TabOrder = 0
         Text = 'EDIT1'
-        ExplicitLeft = 1
-        ExplicitTop = 22
-        ExplicitWidth = 248
-        ExplicitHeight = 35
       end
       object Panel2: TPanel
         Left = 0
@@ -405,9 +402,6 @@ object form_login: Tform_login
         Color = 11645361
         ParentBackground = False
         TabOrder = 1
-        ExplicitLeft = 1
-        ExplicitTop = 57
-        ExplicitWidth = 248
       end
     end
     object Panel3: TPanel
@@ -420,7 +414,7 @@ object form_login: Tform_login
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 47
+        Width = 250
         Height = 21
         Align = alTop
         Caption = 'Senha'
@@ -430,6 +424,7 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        ExplicitWidth = 47
       end
       object Edit2: TEdit
         Left = 0
@@ -449,7 +444,6 @@ object form_login: Tform_login
         ParentFont = False
         TabOrder = 0
         Text = 'EDIT1'
-        ExplicitHeight = 37
       end
       object Panel4: TPanel
         Left = 0
@@ -461,7 +455,6 @@ object form_login: Tform_login
         Color = 11645361
         ParentBackground = False
         TabOrder = 1
-        ExplicitTop = 58
       end
     end
     object Panel5: TPanel

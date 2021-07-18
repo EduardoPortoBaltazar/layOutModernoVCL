@@ -59,6 +59,7 @@ type
     procedure spb_rapido_produtoMouseLeave(Sender: TObject);
     procedure spb_rapido_caixaMouseLeave(Sender: TObject);
     procedure spbClienteClick(Sender: TObject);
+    procedure spb_rapido_caixaClick(Sender: TObject);
   private
     { Private declarations }
 //    procedure prc_focar_botao(BarraPainel: TPanel; Botao: TSpeedButton; focar: Boolean; local : string);
@@ -73,7 +74,7 @@ var
 implementation
 
 uses
-  u_central, u_funcoes;
+  u_central, u_funcoes, u_login;
 
 {$R *.dfm}
 
@@ -122,6 +123,12 @@ end;
 procedure Tform_principal.spb_minimizarClick(Sender: TObject);
 begin
   Application.Minimize;
+end;
+
+procedure Tform_principal.spb_rapido_caixaClick(Sender: TObject);
+begin
+  form_login := Tform_login.Create(nil);
+  form_login.Show;
 end;
 
 procedure Tform_principal.spb_rapido_caixaMouseEnter(Sender: TObject);
