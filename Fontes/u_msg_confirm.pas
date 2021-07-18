@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls,
-  dxGDIPlusClasses, Vcl.ExtCtrls;
+  Vcl.ExtCtrls;
 
 type
   Tform_msn_confirm = class(TForm)

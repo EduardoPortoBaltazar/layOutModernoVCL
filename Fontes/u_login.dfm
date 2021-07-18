@@ -361,7 +361,7 @@ object form_login: Tform_login
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 250
+        Width = 110
         Height = 21
         Align = alTop
         Caption = 'Nome Usu'#225'rio'
@@ -371,7 +371,6 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitTop = 2
       end
       object Edit1: TEdit
         Left = 0
@@ -421,7 +420,7 @@ object form_login: Tform_login
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 250
+        Width = 47
         Height = 21
         Align = alTop
         Caption = 'Senha'
@@ -431,7 +430,6 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 47
       end
       object Edit2: TEdit
         Left = 0
